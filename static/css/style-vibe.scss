@@ -68,23 +68,29 @@
    Hero
    ========================================================================== */
 
+:root {
+  --ecohost-green: #22c55e;
+}
+
 .hero-vibe {
   position: relative;
   overflow: hidden;
-  padding: 56px 0 72px;
   background: #0d0f0d;
 }
 
 .hero-vibe-grid {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 40px;
 }
 
 .hero-vibe-content {
-  flex: 1 1 50%;
+  flex: 0 1 50%;
+  max-width: 50%;
   min-width: 0;
   text-align: left;
+  padding: 56px 0;
 }
 
 .hero-vibe-title {
@@ -98,7 +104,7 @@
 
 .hero-vibe-title em {
   font-style: normal;
-  color: var(--accent-color);
+  color: var(--ecohost-green);
 }
 
 .hero-vibe-subtitle {
@@ -110,16 +116,16 @@
 }
 
 .hero-vibe .vibe-btn {
-  background-color: var(--accent-color);
-  color: #0d0f0d;
-  fill: #0d0f0d;
-  box-shadow: 0 10px 30px -8px var(--accent-color);
+  background-color: var(--ecohost-green);
+  color: #ffffff;
+  fill: #ffffff;
+  box-shadow: 0 10px 30px -8px var(--ecohost-green);
 }
 
 .hero-vibe .vibe-btn:hover,
 .hero-vibe .vibe-btn:focus {
-  color: #0d0f0d;
-  box-shadow: 0 16px 36px -6px var(--accent-color);
+  color: #ffffff;
+  box-shadow: 0 16px 36px -6px var(--ecohost-green);
 }
 
 .hero-vibe .vibe-btn-ghost {
@@ -139,35 +145,44 @@
 }
 
 .hero-vibe-media {
-  flex: 1 1 50%;
-  min-width: 0;
-  position: relative;
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
 }
 
 .hero-vibe-media img {
-  position: relative;
+  display: block;
   width: 100%;
-  max-width: 560px;
+  height: 100%;
+  object-fit: cover;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
   mask-image: linear-gradient(to right, transparent 0%, black 35%);
-}
-
-@media (max-width: 767px) {
-  .hero-vibe-media img {
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
 }
 
 @media (max-width: 767px) {
   .hero-vibe-grid {
     flex-direction: column;
   }
-  .hero-vibe-content, .hero-vibe-media {
-    flex-basis: auto;
+  .hero-vibe-content {
+    max-width: 100%;
     text-align: center;
+    padding-bottom: 0;
+  }
+  .hero-vibe-media {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 260px;
+    margin-bottom: 40px;
+  }
+  .hero-vibe-media img {
+    -webkit-mask-image: none;
+    mask-image: none;
   }
   .hero-vibe-subtitle {
     margin-left: auto;
@@ -335,6 +350,7 @@
   width: 100%;
   margin: 0 auto;
   background: var(--main-background);
+  border: 1px solid #ececec;
   border-radius: 24px;
   padding: 40px 32px 32px;
   box-shadow: 0 20px 45px -24px var(--main-foreground-opacity-30);

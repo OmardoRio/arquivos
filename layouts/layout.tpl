@@ -62,9 +62,12 @@
 
         <link rel="stylesheet" href="{{ 'css/style-async.scss' | static_url }}" media="print" onload="this.media='all'">
 
-        {# Custom "vibe" redesign: hero, kit sale block, premium testimonials, social + video #}
+        {# Custom "vibe" redesign: hero, kit sale block, premium testimonials, social + video.
+           Loaded synchronously (not deferred) so it's already applied before the
+           swiper carousels measure their layout - avoids a race that misaligned
+           the testimonials slider. #}
 
-        <link rel="stylesheet" href="{{ 'css/style-vibe.scss' | static_url }}" media="print" onload="this.media='all'">
+        {{ 'css/style-vibe.scss' | static_url | static_inline }}
 
         {# Loads custom CSS added from Advanced Settings on the admin´s theme customization screen #}
 
