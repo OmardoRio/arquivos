@@ -37,11 +37,6 @@
 									<div class="swiper-slide">
 										<div class="testimonial-premium-card">
 											<span class="testimonial-premium-quote">&rdquo;</span>
-											<div class="testimonial-premium-stars">
-												{% for star in 1..5 %}
-													<svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7-5.4-4.7 7.1-.6z"/></svg>
-												{% endfor %}
-											</div>
 											<div class="testimonials-image mb-3{% if not testimonial_image %} line{% endif %}">
 												{% if testimonial_image %}
 													<img class="testimonials-image-background lazyload" src="{{ 'images/empty-placeholder.png' | static_url }}" data-src='{{ "#{testimonial}.jpg" | static_url | settings_image_url("small") }}' {% if testimonial_name %}alt="{{ testimonial_name }}"{% else %}alt="{{ 'Testimonio de' | translate }} {{ store.name }}"{% endif %} />
@@ -49,6 +44,11 @@
 												{% else %}
 													<svg class="icon-inline icon-lg"><use xlink:href="#quote"/></svg>
 												{% endif %}
+											</div>
+											<div class="testimonial-premium-stars">
+												{% for star in 1..5 %}
+													<svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7-5.4-4.7 7.1-.6z"/></svg>
+												{% endfor %}
 											</div>
 											{% if testimonial_description %}
 												<p class="testimonial-premium-description{% if settings.testimonials_italic %} font-italic{% endif %}">{{ testimonial_description }}</p>

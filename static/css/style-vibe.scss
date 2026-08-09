@@ -70,6 +70,7 @@
 
 :root {
   --ecohost-green: #22c55e;
+  --ecohost-green-deep: #15803d;
 }
 
 .hero-vibe {
@@ -116,16 +117,16 @@
 }
 
 .hero-vibe .vibe-btn {
-  background-color: var(--ecohost-green);
+  background: linear-gradient(135deg, var(--ecohost-green) 0%, var(--ecohost-green-deep) 100%);
   color: #ffffff;
   fill: #ffffff;
-  box-shadow: 0 10px 30px -8px var(--ecohost-green);
+  box-shadow: 0 8px 18px -8px rgba(0, 0, 0, .5);
 }
 
 .hero-vibe .vibe-btn:hover,
 .hero-vibe .vibe-btn:focus {
   color: #ffffff;
-  box-shadow: 0 16px 36px -6px var(--ecohost-green);
+  box-shadow: 0 10px 22px -8px rgba(0, 0, 0, .55);
 }
 
 .hero-vibe .vibe-btn-ghost {
@@ -198,7 +199,7 @@
    ========================================================================== */
 
 .section-kit-sale {
-  padding: 24px 0 72px;
+  padding: 24px 0 48px;
 }
 
 .kit-sale-card {
@@ -319,7 +320,7 @@
    ========================================================================== */
 
 .section-testimonials-home.testimonials-premium {
-  padding: 72px 0;
+  padding: 48px 0 72px;
   background: var(--main-foreground-opacity-03);
 }
 
