@@ -6,7 +6,6 @@
 	<div class="vibe-container">
 		<div class="hero-vibe-grid">
 			<div class="hero-vibe-content">
-				<span class="vibe-eyebrow">{{ 'Sistema automatizado de economia de energia' | translate }}</span>
 				<h1 class="hero-vibe-title">{{ 'Economize até' | translate }} <em>70%</em> {{ 'na conta de luz do seu Airbnb' | translate }}</h1>
 				<p class="hero-vibe-subtitle">{{ 'A EcoHost automatiza o consumo de energia da sua hospedagem e devolve a diferença direto no seu bolso, sem complicar a experiência do hóspede.' | translate }}</p>
 				<div class="hero-vibe-actions">

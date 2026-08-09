@@ -8,12 +8,10 @@
 <section class="section-kit-sale" id="kit-ecohost" data-store="home-kit-sale">
 	<div class="vibe-container">
 		<div class="kit-sale-card">
-			<div class="kit-sale-glow"></div>
 			<div class="kit-sale-media">
 				<img src="{{ 'images/kit-ecohost-box.png' | static_url }}" alt="{{ 'Kit EcoHost' | translate }}" />
 			</div>
 			<div class="kit-sale-content">
-				<span class="kit-sale-eyebrow">{{ 'Kit completo' | translate }}</span>
 				<h2 class="kit-sale-title">{{ 'Seu EcoHost chegou!' | translate }}</h2>
 				<p class="kit-sale-description">{{ 'Comece agora a economizar até 70% na conta de luz do seu Airbnb com o sistema automatizado de economia de energia da EcoHost.' | translate }}</p>
 				<ul class="kit-sale-list">

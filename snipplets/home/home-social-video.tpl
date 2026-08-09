@@ -2,8 +2,6 @@
    The video reuses settings.video_embed — set a video link on
    Theme customization > Home > Video, and it appears here automatically. #}
 
-{% set has_social_network = store.facebook or store.twitter or store.pinterest or store.instagram or store.tiktok or store.youtube %}
-
 {% if settings.video_embed %}
 	{% if '/watch?v=' in settings.video_embed %}
 		{% set video_format = '/watch?v=' %}
@@ -15,28 +13,18 @@
 	{% set video_id = video_format ? (settings.video_embed | split(video_format) | last) : '' %}
 {% endif %}
 
-{% if has_social_network or settings.video_embed %}
+{% if store.instagram or settings.video_embed %}
 <section class="section-social-video" data-store="home-social-video">
 	<div class="vibe-container">
 		<div class="social-video-grid">
 			<div class="social-video-panel">
 				<h2>{{ 'Acompanhe a EcoHost' | translate }}</h2>
 				<p>{{ 'Bastidores, novidades e dicas de economia de energia para quem vive de hospedagem.' | translate }}</p>
-				{% if has_social_network %}
-					<div class="social-video-links">
-						{% if store.instagram %}
-							<a target="_blank" rel="noopener" href="{{ store.instagram }}" class="social-video-chip">Instagram</a>
-						{% endif %}
-						{% if store.facebook %}
-							<a target="_blank" rel="noopener" href="{{ store.facebook }}" class="social-video-chip">Facebook</a>
-						{% endif %}
-						{% if store.tiktok %}
-							<a target="_blank" rel="noopener" href="{{ store.tiktok }}" class="social-video-chip">TikTok</a>
-						{% endif %}
-						{% if store.youtube %}
-							<a target="_blank" rel="noopener" href="{{ store.youtube }}" class="social-video-chip">YouTube</a>
-						{% endif %}
-					</div>
+				{% if store.instagram %}
+					<a target="_blank" rel="noopener" href="{{ store.instagram }}" class="social-video-chip">
+						<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+						{{ 'Siga a EcoHost no Instagram' | translate }}
+					</a>
 				{% endif %}
 			</div>
 			<div class="social-video-media">
