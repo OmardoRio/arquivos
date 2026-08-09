@@ -72,7 +72,7 @@
   position: relative;
   overflow: hidden;
   padding: 56px 0 72px;
-  background: var(--main-background);
+  background: #0d0f0d;
 }
 
 .hero-vibe-grid {
@@ -93,7 +93,7 @@
   font-size: clamp(34px, 5vw, 58px);
   line-height: 1.05;
   margin: 20px 0 20px;
-  color: var(--main-foreground);
+  color: #ffffff;
 }
 
 .hero-vibe-title em {
@@ -106,7 +106,29 @@
   line-height: 1.5;
   max-width: 480px;
   margin: 0 0 32px;
-  color: var(--main-foreground-opacity-80);
+  color: rgba(255, 255, 255, .72);
+}
+
+.hero-vibe .vibe-btn {
+  background-color: var(--accent-color);
+  color: #0d0f0d;
+  fill: #0d0f0d;
+  box-shadow: 0 10px 30px -8px var(--accent-color);
+}
+
+.hero-vibe .vibe-btn:hover,
+.hero-vibe .vibe-btn:focus {
+  color: #0d0f0d;
+  box-shadow: 0 16px 36px -6px var(--accent-color);
+}
+
+.hero-vibe .vibe-btn-ghost {
+  color: #ffffff;
+}
+
+.hero-vibe .vibe-btn-ghost:hover,
+.hero-vibe .vibe-btn-ghost:focus {
+  color: #ffffff;
 }
 
 .hero-vibe-actions {
@@ -127,10 +149,9 @@
 .hero-vibe-media img {
   position: relative;
   width: 100%;
-  max-width: 460px;
-  box-shadow: 0 30px 60px -20px var(--main-foreground-opacity-30);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 22%);
-  mask-image: linear-gradient(to right, transparent 0%, black 22%);
+  max-width: 560px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
+  mask-image: linear-gradient(to right, transparent 0%, black 35%);
 }
 
 @media (max-width: 767px) {
@@ -309,13 +330,17 @@
 }
 
 .testimonial-premium-card {
-  height: 100%;
+  box-sizing: border-box;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
   background: var(--main-background);
   border-radius: 24px;
   padding: 40px 32px 32px;
   box-shadow: 0 20px 45px -24px var(--main-foreground-opacity-30);
   position: relative;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .testimonial-premium-quote {

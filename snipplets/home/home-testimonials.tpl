@@ -22,10 +22,16 @@
 				<div class="col-md-8">
 					<div class="js-swiper-testimonials swiper-testimonials swiper-container">
 						<div class="swiper-wrapper">
+							{% set testimonial_roles = {
+								'testimonial_01': 'Anfitriã em São Paulo',
+								'testimonial_02': 'Anfitrião em Florianópolis',
+								'testimonial_03': 'Anfitrião no Rio de Janeiro'
+							} %}
 							{% for testimonial in ['testimonial_01', 'testimonial_02', 'testimonial_03'] %}
 								{% set testimonial_image = "#{testimonial}.jpg" | has_custom_image %}
 								{% set testimonial_name = attribute(settings,"#{testimonial}_name") %}
 								{% set testimonial_description = attribute(settings,"#{testimonial}_description") %}
+								{% set testimonial_role = attribute(testimonial_roles, testimonial) %}
 								{% set has_testimonial = testimonial_name or testimonial_description or testimonial_image %}
 								{% if has_testimonial %}
 									<div class="swiper-slide">
@@ -49,7 +55,9 @@
 											{% endif %}
 											{% if testimonial_name %}
 												<h3 class="testimonial-premium-name">{{ testimonial_name }}</h3>
-												<p class="testimonial-premium-role">{{ 'Hóspede EcoHost' | translate }}</p>
+												{% if testimonial_role %}
+													<p class="testimonial-premium-role">{{ testimonial_role }}</p>
+												{% endif %}
 											{% endif %}
 										</div>
 									</div>

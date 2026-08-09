@@ -1,6 +1,5 @@
 {# Custom hero — left-aligned copy, product photo on the right.
-   Uses the kit box photo as a placeholder (images/kit-ecohost-box.png).
-   Swap the filename below for a dedicated lifestyle/product photo once you have one. #}
+   Upload the lifestyle/product photo as static/images/hero-product.jpg. #}
 
 <section class="hero-vibe" data-store="home-hero-vibe">
 	<div class="vibe-container">
@@ -17,7 +16,7 @@
 				</div>
 			</div>
 			<div class="hero-vibe-media">
-				<img src="{{ 'images/kit-ecohost-box.png' | static_url }}" alt="{{ store.name }}" />
+				<img src="{{ 'images/hero-product.jpg' | static_url }}" alt="{{ store.name }}" />
 			</div>
 		</div>
 	</div>
