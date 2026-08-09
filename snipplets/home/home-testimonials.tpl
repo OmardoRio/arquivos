@@ -12,13 +12,14 @@
 {% endfor %}
 
 {% if has_home_testimonials %}
-	<section class="section-testimonials-home overflow-none{% if not settings.testimonials_title %} pt-4{% endif %}" data-store="home-testimonials">
-		<div class="container">
-			{% if settings.testimonials_title %}
-				<h2 class="h3 mt-3 mb-4 text-center">{{ settings.testimonials_title }}</h2>
-			{% endif %}
+	<section class="section-testimonials-home testimonials-premium overflow-none" data-store="home-testimonials">
+		<div class="vibe-container">
+			<div class="testimonials-premium-heading">
+				<h2>{{ settings.testimonials_title ? settings.testimonials_title : ('O que dizem sobre a EcoHost' | translate) }}</h2>
+				<p>{{ 'Anfitriões reais, economia real na conta de luz.' | translate }}</p>
+			</div>
 			<div class="row justify-content-center">
-				<div class="col-md-6">
+				<div class="col-md-8">
 					<div class="js-swiper-testimonials swiper-testimonials swiper-container">
 						<div class="swiper-wrapper">
 							{% for testimonial in ['testimonial_01', 'testimonial_02', 'testimonial_03'] %}
@@ -28,7 +29,13 @@
 								{% set has_testimonial = testimonial_name or testimonial_description or testimonial_image %}
 								{% if has_testimonial %}
 									<div class="swiper-slide">
-										<div class="py-3 px-5 p-md-3 text-center">
+										<div class="testimonial-premium-card">
+											<span class="testimonial-premium-quote">&rdquo;</span>
+											<div class="testimonial-premium-stars">
+												{% for star in 1..5 %}
+													<svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7-5.4-4.7 7.1-.6z"/></svg>
+												{% endfor %}
+											</div>
 											<div class="testimonials-image mb-3{% if not testimonial_image %} line{% endif %}">
 												{% if testimonial_image %}
 													<img class="testimonials-image-background lazyload" src="{{ 'images/empty-placeholder.png' | static_url }}" data-src='{{ "#{testimonial}.jpg" | static_url | settings_image_url("small") }}' {% if testimonial_name %}alt="{{ testimonial_name }}"{% else %}alt="{{ 'Testimonio de' | translate }} {{ store.name }}"{% endif %} />
@@ -38,10 +45,11 @@
 												{% endif %}
 											</div>
 											{% if testimonial_description %}
-												<p class="mb-3 {% if settings.testimonials_italic %} font-italic{% endif %}">{{ testimonial_description }}</p>
+												<p class="testimonial-premium-description{% if settings.testimonials_italic %} font-italic{% endif %}">{{ testimonial_description }}</p>
 											{% endif %}
 											{% if testimonial_name %}
-												<h3 class="h6 font-weight-bold {% if num_testimonials > 1 %}mb-0{% else %}mb-3{% endif %}">{{ testimonial_name }}</h3>
+												<h3 class="testimonial-premium-name">{{ testimonial_name }}</h3>
+												<p class="testimonial-premium-role">{{ 'Hóspede EcoHost' | translate }}</p>
 											{% endif %}
 										</div>
 									</div>

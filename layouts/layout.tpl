@@ -62,6 +62,10 @@
 
         <link rel="stylesheet" href="{{ 'css/style-async.scss' | static_url }}" media="print" onload="this.media='all'">
 
+        {# Custom "vibe" redesign: hero, kit sale block, premium testimonials, social + video #}
+
+        <link rel="stylesheet" href="{{ 'css/style-vibe.scss' | static_url }}" media="print" onload="this.media='all'">
+
         {# Loads custom CSS added from Advanced Settings on the admin´s theme customization screen #}
 
         <style>
