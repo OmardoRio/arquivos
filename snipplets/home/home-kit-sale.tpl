@@ -1,8 +1,6 @@
-{# Custom "Kit EcoHost" sales block.
-   Update the checkout link below (kit_sale_url) once you have the product page URL,
-   and the price text (kit_sale_price) with the real value. #}
+{# Custom "Kit EcoHost" sales block. #}
 
-{% set kit_sale_url = '/productos' %}
+{% set kit_sale_url = 'https://ecohost.net.br/produtos/kit-ecohost-flat/' %}
 {% set kit_sale_price = 'Consulte o valor e formas de pagamento' %}
 
 <section class="section-kit-sale" id="kit-ecohost" data-store="home-kit-sale">
