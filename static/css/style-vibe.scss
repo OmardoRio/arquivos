@@ -80,7 +80,6 @@
 }
 
 .hero-vibe-grid {
-  position: relative;
   display: flex;
   align-items: center;
   gap: 40px;
@@ -159,8 +158,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
-  mask-image: linear-gradient(to right, transparent 0%, black 35%);
+  object-position: right center;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, .5) 20%, black 55%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, .5) 20%, black 55%);
 }
 
 @media (max-width: 767px) {
@@ -320,7 +320,7 @@
    ========================================================================== */
 
 .section-testimonials-home.testimonials-premium {
-  padding: 48px 0 72px;
+  padding: 48px 0;
   background: var(--main-foreground-opacity-03);
 }
 
@@ -415,7 +415,7 @@
    ========================================================================== */
 
 .section-social-video {
-  padding: 72px 0;
+  padding: 48px 0 72px;
 }
 
 .social-video-grid {
