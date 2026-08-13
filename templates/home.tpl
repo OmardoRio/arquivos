@@ -55,6 +55,8 @@
     {% endif %}
 </div>
 
+{% include 'snipplets/home/home-faq.tpl' %}
+
 {% include 'snipplets/home/home-social-video.tpl' %}
 
 {% if settings.home_promotional_popup and ("home_popup_image.jpg" | has_custom_image or settings.home_popup_title or settings.home_popup_txt or settings.home_news_box or (settings.home_popup_btn and settings.home_popup_url)) %}
