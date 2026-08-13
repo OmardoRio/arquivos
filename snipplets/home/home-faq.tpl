@@ -75,16 +75,32 @@
 		</div>
 		<div class="faq-list">
 			{% for item in faq_items %}
-				<details class="faq-item">
-					<summary class="faq-question">
+				<div class="faq-item">
+					<button type="button" class="faq-question" aria-expanded="false">
 						{{ item.question }}
 						<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5v14"/></svg>
-					</summary>
-					<div class="faq-answer">
-						<p>{{ item.answer }}</p>
+					</button>
+					<div class="faq-answer-wrap">
+						<div class="faq-answer">
+							<p>{{ item.answer }}</p>
+						</div>
 					</div>
-				</details>
+				</div>
 			{% endfor %}
 		</div>
 	</div>
 </section>
+
+<script>
+	LS.ready.then(function () {
+		jQueryNuvem('.section-faq .faq-question').on('click', function () {
+			var item = jQueryNuvem(this).closest('.faq-item');
+			var wasOpen = item.hasClass('is-open');
+			item.closest('.faq-list').find('.faq-item.is-open').removeClass('is-open').find('.faq-question').attr('aria-expanded', 'false');
+			if (!wasOpen) {
+				item.addClass('is-open');
+				jQueryNuvem(this).attr('aria-expanded', 'true');
+			}
+		});
+	});
+</script>
