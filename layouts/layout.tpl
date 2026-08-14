@@ -135,6 +135,22 @@
 
         {% snipplet "header/header.tpl" %}
 
+        <style>.js-hide-nav-item{display:none!important;}</style>
+        <script>
+            (function () {
+                var links = document.querySelectorAll('header a, .navigation a, nav a');
+                for (var i = 0; i < links.length; i++) {
+                    var label = links[i].textContent.trim();
+                    if (label === 'Contato' || label === 'Contact') {
+                        links[i].classList.add('js-hide-nav-item');
+                        if (links[i].parentElement && links[i].parentElement.tagName === 'LI') {
+                            links[i].parentElement.classList.add('js-hide-nav-item');
+                        }
+                    }
+                }
+            })();
+        </script>
+
         {# Page content #}
 
         {% template_content %}

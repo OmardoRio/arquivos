@@ -532,12 +532,12 @@
 
 .faq-heading h2 {
   font-family: var(--heading-font);
-  font-size: clamp(24px, 2.6vw, 32px);
+  font-size: clamp(26px, 3vw, 36px);
   margin-bottom: 8px;
 }
 
 .faq-heading p {
-  font-size: var(--font-small);
+  font-size: var(--font-large);
   color: var(--main-foreground-opacity-50);
 }
 
