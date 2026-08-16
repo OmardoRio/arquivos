@@ -30,3 +30,36 @@
 
 {# Related products #}
 {% include 'snipplets/product/product-related.tpl' %}
+
+{% if product.handle == 'kit-ecohost-flat' %}
+	{# "Buy now": skip the cart step and go straight to checkout for this product only.
+	   Reuses the same hidden field ("go_to_checkout") the real cart page's "Iniciar Compra"
+	   button submits to store.cart_url, but fires it directly from the product form,
+	   bypassing the ajax add-to-cart so the browser navigates straight into checkout. #}
+	<script>
+		(function () {
+			var container = document.getElementById('single-product');
+			if (!container) return;
+			var button = container.querySelector('.js-addtocart:not(.js-addtocart-placeholder)');
+			if (!button) return;
+
+			button.addEventListener('click', function (e) {
+				var form = button.closest('form');
+				if (!form) return;
+
+				e.stopImmediatePropagation();
+				e.preventDefault();
+
+				if (!form.querySelector('input[name="go_to_checkout"]')) {
+					var hidden = document.createElement('input');
+					hidden.type = 'hidden';
+					hidden.name = 'go_to_checkout';
+					hidden.value = 'Iniciar Compra';
+					form.appendChild(hidden);
+				}
+
+				form.submit();
+			});
+		})();
+	</script>
+{% endif %}
