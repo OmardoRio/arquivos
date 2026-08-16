@@ -32,10 +32,12 @@
 {% include 'snipplets/product/product-related.tpl' %}
 
 {% if product.handle == 'kit-ecohost-flat' %}
-	{# "Buy now": skip the cart step and go straight to checkout for this product only.
-	   Reuses the same hidden field ("go_to_checkout") the real cart page's "Iniciar Compra"
-	   button submits to store.cart_url, but fires it directly from the product form,
-	   bypassing the ajax add-to-cart so the browser navigates straight into checkout. #}
+	{# "Buy now": skip the cart step for this product only.
+	   Does NOT touch the normal add-to-cart flow (that stays exactly as it works for
+	   every other product). It only "arms" when the buy button is clicked, then once the
+	   platform's own "cart.released" event confirms the item was added, it clicks the
+	   real "Iniciar Compra"/checkout button the cart drawer already renders - same as a
+	   person clicking it manually, just automated. #}
 	<script>
 		(function () {
 			var container = document.getElementById('single-product');
@@ -43,22 +45,22 @@
 			var button = container.querySelector('.js-addtocart:not(.js-addtocart-placeholder)');
 			if (!button) return;
 
-			button.addEventListener('click', function (e) {
-				var form = button.closest('form');
-				if (!form) return;
+			var armed = false;
 
-				e.stopImmediatePropagation();
-				e.preventDefault();
+			button.addEventListener('click', function () {
+				armed = true;
+			});
 
-				if (!form.querySelector('input[name="go_to_checkout"]')) {
-					var hidden = document.createElement('input');
-					hidden.type = 'hidden';
-					hidden.name = 'go_to_checkout';
-					hidden.value = 'Iniciar Compra';
-					form.appendChild(hidden);
-				}
+			document.addEventListener('cart.released', function () {
+				if (!armed) return;
+				armed = false;
 
-				form.submit();
+				setTimeout(function () {
+					var checkoutButton = document.querySelector(
+						'#go-to-checkout, [data-component="cart.checkout-button"] input[type="submit"], [data-component="cart.checkout-button"] button'
+					);
+					if (checkoutButton) checkoutButton.click();
+				}, 400);
 			});
 		})();
 	</script>
