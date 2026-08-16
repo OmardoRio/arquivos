@@ -67,7 +67,7 @@
 	}
 ] %}
 
-<section class="section-faq" data-store="home-faq">
+<section class="section-faq" id="faq" data-store="home-faq">
 	<div class="faq-container">
 		<div class="faq-heading">
 			<h2>{{ 'Perguntas frequentes' | translate }}</h2>
