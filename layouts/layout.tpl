@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{% if template == 'home' %}EcoHost - Economize até 70% na conta de luz do seu Airbnb{% else %}{{ page_title }}{% endif %}</title>
+        <title>{% if template == 'home' %}EcoHost - Economize até 70% na conta de luz do seu Airbnb{% elseif template == 'product' and product.handle == 'kit-ecohost-flat' %}Ecohost - Adquira seu Kit EcoHost{% else %}{{ page_title }}{% endif %}</title>
         <meta name="description" content="{{ page_description }}" />
 
         {% set welcome_italic_font = settings.welcome_text and settings.welcome_italic %}
