@@ -607,3 +607,42 @@
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   Terms & Conditions modal
+   ========================================================================== */
+
+.terms-conditions-modal.modal-centered-small {
+  width: 92%;
+  max-width: 480px;
+}
+
+.terms-conditions-modal .modal-body {
+  min-height: 0;
+  max-height: 72vh;
+  overflow-y: auto;
+}
+
+.terms-conditions-modal.modal-centered-small,
+.terms-conditions-modal .modal-dialog,
+.terms-conditions-modal .modal-content {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.terms-conditions-content h4 {
+  font-family: var(--heading-font);
+  font-size: var(--font-big);
+  margin: 20px 0 8px;
+}
+
+.terms-conditions-content h4:first-of-type {
+  margin-top: 4px;
+}
+
+.terms-conditions-content p {
+  font-size: var(--font-small);
+  line-height: 1.6;
+  color: var(--main-foreground-opacity-80);
+  margin: 0 0 12px;
+}

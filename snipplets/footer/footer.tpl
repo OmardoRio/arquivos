@@ -145,6 +145,62 @@
 		<div class="d-inline-block mr-md-2 font-smallest">
 			{{ "Copyright {1} - {2}. Todos los derechos reservados." | translate( (store.business_name ? store.business_name : store.name) ~ (store.business_id ? ' - ' ~ store.business_id : ''), "now" | date('Y') ) }}
 		</div>
+
+		{# Terms & Conditions modal (custom - replaces the removed standalone page) #}
+		<div class="d-inline-block mr-md-2 font-smallest">
+			<a href="#" data-toggle="#terms-conditions" class="js-modal-open btn-link font-smallest">{{ 'Termos & Condições' | translate }}</a>
+		</div>
+		{% embed "snipplets/modal.tpl" with{modal_id: 'terms-conditions', modal_class: 'terms-conditions-modal bottom modal-centered-small', modal_position: 'center', modal_transition: 'slide', modal_header_title: true, modal_footer: false, modal_width: 'centered', modal_zindex_top: true} %}
+			{% block modal_head %}
+				{{ 'Termos & Condições' | translate }}
+			{% endblock %}
+			{% block modal_body %}
+				<div class="terms-conditions-content">
+					<p><strong>{{ 'Última atualização' | translate }}:</strong> {{ "now" | date('d/m/Y') }}</p>
+
+					<p>Estes Termos &amp; Condições regulam o uso do site e a compra de produtos da EcoHost. Ao navegar ou realizar uma compra nesta loja, você declara ter lido, compreendido e aceito integralmente as condições abaixo.</p>
+
+					<h4>1. Objeto</h4>
+					<p>A EcoHost comercializa, através deste site, sistemas automatizados de economia de energia voltados a imóveis de locação por temporada (tipo Airbnb) e produtos relacionados, conforme descrição, imagens e preços apresentados em cada página de produto.</p>
+
+					<h4>2. Cadastro e uso do site</h4>
+					<p>Para concluir uma compra, o cliente deve fornecer dados verdadeiros, completos e atualizados. A EcoHost não se responsabiliza por informações incorretas fornecidas pelo próprio cliente no momento do cadastro ou checkout.</p>
+
+					<h4>3. Produtos, preços e disponibilidade</h4>
+					<p>Os preços exibidos no site são válidos apenas para compras realizadas on-line e podem ser alterados sem aviso prévio, respeitando-se o preço vigente no momento da confirmação do pedido. A disponibilidade de estoque é verificada no momento da compra; em caso de indisponibilidade após a confirmação, a EcoHost entrará em contato para oferecer alternativas, incluindo o cancelamento e reembolso integral do valor pago.</p>
+
+					<h4>4. Pagamento</h4>
+					<p>Os pagamentos são processados por meio dos métodos disponibilizados no checkout (cartão de crédito, Pix, boleto, entre outros exibidos). O pedido somente é confirmado após a aprovação do pagamento pela instituição financeira ou meio de pagamento responsável.</p>
+
+					<h4>5. Entrega e frete</h4>
+					<p>O prazo e o custo de entrega são calculados no checkout, com base no endereço informado e na modalidade de frete escolhida. Prazos informados são estimados e podem sofrer variações motivadas pela transportadora ou por casos fortuitos/força maior.</p>
+
+					<h4>6. Direito de arrependimento, trocas e devoluções</h4>
+					<p>Em conformidade com o Código de Defesa do Consumidor (Lei nº 8.078/90, art. 49), o cliente que realizar a compra fora do estabelecimento comercial (como é o caso de compras pela internet) tem o direito de desistir da compra em até 7 (sete) dias corridos a contar do recebimento do produto, sem necessidade de justificativa, com direito a reembolso integral dos valores pagos, incluindo o frete. Para exercer esse direito, o produto deve ser devolvido em sua embalagem original, sem indícios de uso, acompanhado da nota fiscal. Em caso de defeito de fabricação, aplicam-se as regras de garantia descritas abaixo.</p>
+
+					<h4>7. Garantia</h4>
+					<p>Os produtos EcoHost possuem garantia contra defeitos de fabricação, conforme especificado na página de cada produto e/ou nas Perguntas Frequentes do site. A garantia não cobre danos decorrentes de mau uso, instalação realizada em desacordo com as orientações técnicas, ou violação do produto por terceiros não autorizados.</p>
+
+					<h4>8. Responsabilidades</h4>
+					<p>A EcoHost se compromete a fornecer informações claras e precisas sobre seus produtos. O funcionamento do sistema depende da correta instalação e configuração do equipamento no imóvel do cliente. A EcoHost não se responsabiliza por danos indiretos decorrentes de uso inadequado, instalação por terceiros não orientados pela empresa, ou de fatores alheios ao equipamento (como instabilidades na rede elétrica do imóvel).</p>
+
+					<h4>9. Propriedade intelectual</h4>
+					<p>Todo o conteúdo deste site - textos, imagens, marca, layout e identidade visual - é de propriedade da EcoHost ou de seus licenciadores, sendo proibida a reprodução total ou parcial sem autorização prévia e expressa.</p>
+
+					<h4>10. Privacidade e proteção de dados</h4>
+					<p>Os dados pessoais fornecidos pelo cliente são tratados em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/18 - LGPD) e utilizados exclusivamente para processar o pedido, realizar a entrega e prestar suporte ao cliente, não sendo compartilhados com terceiros para fins alheios à compra.</p>
+
+					<h4>11. Alterações destes termos</h4>
+					<p>A EcoHost pode atualizar estes Termos &amp; Condições a qualquer momento, sendo a versão vigente sempre a publicada nesta página, identificada pela data de "última atualização" acima.</p>
+
+					<h4>12. Foro e legislação aplicável</h4>
+					<p>Estes Termos &amp; Condições são regidos pela legislação brasileira. Fica eleito o foro do domicílio do consumidor para dirimir eventuais controvérsias decorrentes deste instrumento, conforme previsto no Código de Defesa do Consumidor.</p>
+
+					<p>{{ 'Em caso de dúvidas sobre estes termos, entre em contato através dos nossos canais de atendimento.' | translate }}</p>
+				</div>
+			{% endblock %}
+		{% endembed %}
+
 		{{ component('claim-info', {
 				container_classes: "d-md-inline-block mt-md-0 mt-3 font-smallest",
 				divider_classes: "mx-1 d-none d-md-inline-block",
