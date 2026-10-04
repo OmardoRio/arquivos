@@ -158,8 +158,7 @@
 				<div class="terms-modal-scroll">
 					<h3 class="terms-modal-title">{{ 'Termos & Condições' | translate }}</h3>
 					<div class="terms-conditions-content">
-						<p><strong>{{ 'Última atualização' | translate }}:</strong> {{ "now" | date('d/m/Y') }}</p>
-
+						<h4>Aceitação dos termos</h4>
 						<p>Estes Termos &amp; Condições regulam o uso do site e a compra de produtos da EcoHost. Ao navegar ou realizar uma compra nesta loja, você declara ter lido, compreendido e aceito integralmente as condições abaixo.</p>
 
 						<h4>1. Objeto</h4>
@@ -193,11 +192,12 @@
 						<p>Os dados pessoais fornecidos pelo cliente são tratados em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/18 - LGPD) e utilizados exclusivamente para processar o pedido, realizar a entrega e prestar suporte ao cliente, não sendo compartilhados com terceiros para fins alheios à compra.</p>
 
 						<h4>11. Alterações destes termos</h4>
-						<p>A EcoHost pode atualizar estes Termos &amp; Condições a qualquer momento, sendo a versão vigente sempre a publicada nesta página, identificada pela data de "última atualização" acima.</p>
+						<p>A EcoHost pode atualizar estes Termos &amp; Condições a qualquer momento, sendo a versão vigente sempre a publicada nesta página.</p>
 
 						<h4>12. Foro e legislação aplicável</h4>
 						<p>Estes Termos &amp; Condições são regidos pela legislação brasileira. Fica eleito o foro do domicílio do consumidor para dirimir eventuais controvérsias decorrentes deste instrumento, conforme previsto no Código de Defesa do Consumidor.</p>
 
+						<h4>13. Contato</h4>
 						<p>{{ 'Em caso de dúvidas sobre estes termos, entre em contato através dos nossos canais de atendimento.' | translate }}</p>
 					</div>
 				</div>

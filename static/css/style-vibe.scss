@@ -633,8 +633,8 @@
 .terms-modal-box {
   position: relative;
   width: 100%;
-  max-width: 480px;
-  max-height: 85vh;
+  max-width: 600px;
+  max-height: 72vh;
   background: var(--main-background);
   border-radius: 20px;
   box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .4);
@@ -685,8 +685,10 @@
 
 .terms-conditions-content h4 {
   font-family: var(--heading-font);
-  font-size: var(--font-big);
-  margin: 20px 0 8px;
+  font-size: var(--font-huge);
+  font-weight: 700;
+  color: var(--main-foreground);
+  margin: 26px 0 8px;
 }
 
 .terms-conditions-content h4:first-of-type {
