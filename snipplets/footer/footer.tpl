@@ -35,6 +35,10 @@
 				</div>
 			{% endif %}
 
+			<div class="mb-3">
+				<a href="#" class="js-terms-modal-open btn-link">{{ 'Termos & Condições' | translate }}</a>
+			</div>
+
 			{% if settings.news_show %}
 				<div class="mb-4">
 					{% include 'snipplets/newsletter.tpl' %}
@@ -146,10 +150,9 @@
 			{{ "Copyright {1} - {2}. Todos los derechos reservados." | translate( (store.business_name ? store.business_name : store.name) ~ (store.business_id ? ' - ' ~ store.business_id : ''), "now" | date('Y') ) }}
 		</div>
 
-		{# Terms & Conditions modal (fully custom - does not depend on the theme's hidden modal system) #}
-		<div class="d-inline-block mr-md-2 font-smallest">
-			<a href="#" class="js-terms-modal-open btn-link font-smallest">{{ 'Termos & Condições' | translate }}</a>
-		</div>
+		{# Terms & Conditions modal (fully custom - does not depend on the theme's hidden modal system).
+		   The trigger link itself lives up with the Foot Nav, next to "Contato"; this just renders
+		   the overlay/box markup, which can live anywhere in the page. #}
 		<div class="terms-modal-overlay js-terms-modal-overlay">
 			<div class="terms-modal-box">
 				<button type="button" class="terms-modal-close js-terms-modal-close" aria-label="{{ 'Fechar' | translate }}">
